@@ -1,0 +1,16 @@
+{
+    "menu": {
+      "enabled": true,
+      "backgroundColor": "blue"
+    },
+    "productList": {
+      "enabled": true,
+      "layout": "grid"
+    },
+    "footer": {
+      "enabled": true,
+      "textColor": "black",
+      "backgroundColor": "yellow"
+
+    }
+}
