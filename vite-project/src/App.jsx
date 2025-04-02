@@ -1,8 +1,8 @@
 import React from 'react';
 import config from './configuration/config.json';
-import Menu from './menu/Menu';
-import ProductList from './productList/ProductList';
-import Footer from './footer/Footer';
+import Menu from './components/menu/Menu';
+import ProductList from './components/productList/ProductList';
+import Footer from './components/footer/Footer';
 
 function App() {
   return (

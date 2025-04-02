@@ -5,7 +5,7 @@ const ProductList = ({ layout }) => {
   { display: 'grid',
     gridTemplateColumns: 'repeat(2, 1fr)'
   } :
-  { display: 'block' };
+  { display: 'flex' };
   
   return (
     <div style={style}>
