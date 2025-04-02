@@ -4,8 +4,9 @@ const ProductList = ({ layout }) => {
   const style = layout === 'grid' ? 
   { display: 'grid',
     gridTemplateColumns: 'repeat(2, 1fr)'
-    } :
+  } :
   { display: 'block' };
+  
   return (
     <div style={style}>
       <div>Room 1</div>
