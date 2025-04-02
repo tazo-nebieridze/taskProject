@@ -7,7 +7,7 @@ const Footer = ({ textColor, backgroundColor }) => {
          color: textColor, padding: '10px',
          backgroundColor: backgroundColor 
         }}>
-      <p>© 2023 Hotel Website</p>
+      <p>© 2025 Tourism Website</p>
     </div>
   );
 };
