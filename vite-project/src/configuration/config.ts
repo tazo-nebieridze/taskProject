@@ -1,16 +1,8 @@
+import { FooterProps } from "../components/footer/Footer";
+import { MenuProps } from "../components/menu/Menu";
+import { ProductListProps } from "../components/productList/ProductList";
 
-export interface MenuProps {
-  backgroundColor: string;
-}
 
-export interface ProductListProps {
-  layout: 'grid' | 'flex';
-}
-
-export interface FooterProps {
-  textColor: string;
-  backgroundColor: string;
-}
 
 export interface ConfigComponentInterface<T> {
   key: string;

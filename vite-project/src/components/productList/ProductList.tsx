@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface ProductListProps {
+export interface ProductListProps {
   layout: 'grid' | 'flex'; 
 }
 

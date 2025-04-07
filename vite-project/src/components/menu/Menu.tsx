@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface MenuProps {
+export interface MenuProps {
   backgroundColor: string;
 }
 
