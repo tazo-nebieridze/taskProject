@@ -1,33 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React, { Suspense } from 'react';
 import { componentConfigs } from './configuration/config';
 
-
-
-function DynamicComponent({ source, props }: { source: string; props: any }) {
-  const [Component, setComponent] = useState<React.ComponentType<any> | null>(null);
-
-  useEffect(() => {
-    import(source).then((module) => {
-      setComponent(() => module.default);
-    });
-  }, [source]);
-
-  if (!Component) return <div>Loading...</div>;
-  return <Component {...props} />;
+interface LazyComponentConfig {
+  key: string;
+  Component: React.LazyExoticComponent<React.ComponentType<any>>;
+  props: any;
 }
+
+const lazyComponents: LazyComponentConfig[] = componentConfigs
+  .filter(config => config.enabled)
+  .map(config => ({
+    key: config.key,
+    Component: React.lazy(() => import(config.source)),
+    props: config.props
+  }));
 
 const App = () => {
   return (
     <div>
-      {componentConfigs
-        .filter((config) => config.enabled)
-        .map((config) => (
-          <DynamicComponent
-            key={config.key}
-            source={config.source}
-            props={config.props}
-          />
-        ))}
+      {lazyComponents.map(({ key, Component, props }) => (
+        <Suspense key={key} fallback={<div>Loading {key}...</div>}>
+          <Component {...props} />
+        </Suspense>
+      ))}
     </div>
   );
 };
